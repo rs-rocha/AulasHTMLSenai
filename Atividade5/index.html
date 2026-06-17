@@ -11,20 +11,37 @@
     <main class="container p-5">
         <h1>Testes JavaScript</h1>
         <div class="container">
+            <form>
+                <div>
+                    <label 
+                        class="form-label" 
+                        for="nome">
+                        Digite seu nome: </label>
+                    <input 
+                        class="form-control p-3" 
+                        type="text"
+                        id="nome">
+                </div>
+                <button class="btn btn-primary" onclick="imprimirNome()">Enviar Dados</button>
+            </form>
             <!-- "CTRL+;" - Comentario html -->
             <script>
-                //comentario de uma linha
-                /*
-                comentario de varias linhas
-                */
-                console.log("Ola, mundo!")
-                let funcionario
-                window.alert("O seu tipo de dado, no momento, está guardando: " + typeof(funcionario))
-                funcionario = "Joao"
-                window.alert("Agora, seu tipo de dado está guardando: " + typeof(funcionario))
-                window.alert(funcionario)
-                //window.confirm("confirme se vc é contra o professor!")
-
+                // CTRL+; comenta o trecho selecionado
+                // //comentario de uma linha
+                // /*
+                // comentario de varias linhas
+                // */
+                // console.log("Ola, mundo!")
+                // let funcionario
+                // window.alert("O seu tipo de dado, no momento, está guardando: " + typeof(funcionario))
+                // funcionario = "Joao"
+                // window.alert("Agora, seu tipo de dado está guardando: " + typeof(funcionario))
+                // window.alert(funcionario)
+                // //window.confirm("confirme se vc é contra o professor!")
+                function imprimirNome(){
+                    window.alert("Seu formulario foi enviado")
+                    console.log("Seu formulario foi enviado")
+                }
 
             </script>
         </div>
