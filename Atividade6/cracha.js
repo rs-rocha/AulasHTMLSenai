@@ -3,7 +3,7 @@ function cadastrarFuncionario(){
    let idade = document.getElementById("idade").value;    
    let cargo = document.getElementById("cargo").value;    
    let departamento = document.getElementById("departamento").value;
-   let acessoRestrito = document.getElementById("acessoRestrito").value;    
+   let acessoRestrito = document.getElementById("acessoRestrito").checked;    
     
    console.log(
        "Nome: " + nome + "\n" + 
