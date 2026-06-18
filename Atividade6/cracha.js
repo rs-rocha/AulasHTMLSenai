@@ -21,5 +21,12 @@ function cadastrarFuncionario(){
         "Departamento: " + departamento + "\n" +
         "Acesso Restrito: " + acessoRestrito + "\n" +
         "\n" 
-   );   
+   );
+   
+   if (acessoRestrito){
+      window.location.href = "pages/gerente.html";
+   }else{
+      window.location.href = "pages/funcionario.html";
+   }
 }
+
