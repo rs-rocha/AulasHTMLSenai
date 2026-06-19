@@ -1,4 +1,4 @@
-function cadastrarFuncionario(){
+function crachaDeFuncionario(){
    let nome = document.getElementById("nome").value;    
    let idade = document.getElementById("idade").value;    
    let cargo = document.getElementById("cargo").value;    
