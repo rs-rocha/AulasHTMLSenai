@@ -37,6 +37,8 @@ function cadastrarFuncionario() {
     
     sessaoLista.appendChild(cardFuncionario);
 
+    //sessaoLista.prepend(cardFuncionario);
+
     document.getElementById("nome-funcionario").value = "";
     document.getElementById("cargo-funcionario").value = "";
     document.getElementById("horas-funcionario").selectedIndex = 0;
