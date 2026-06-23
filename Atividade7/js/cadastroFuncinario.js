@@ -1,3 +1,4 @@
+let i = 1
 function cadastrarFuncionario() {
     let nome = document.getElementById("nome-funcionario").value;
     let horas = document.getElementById("horas-funcionario").value;
@@ -39,8 +40,25 @@ function cadastrarFuncionario() {
 
     //sessaoLista.prepend(cardFuncionario);
 
+    salvarCadastro(i, nome, horas, cargo)
+
     document.getElementById("nome-funcionario").value = "";
     document.getElementById("cargo-funcionario").value = "";
     document.getElementById("horas-funcionario").selectedIndex = 0;
 
+    i++
+
+}
+function salvarCadastro(i, nome, horas, cargo){
+    //let valorDigitado = document.getElementById("texto-inserido").value;
+    let objetoFuncionario = {
+        nome: nome, 
+        horas: horas,
+        cargo: cargo
+    };
+    let textoJSON = JSON.stringify(objetoFuncionario);
+    
+
+    localStorage.setItem(i, textoJSON);
+    //document.getElementById("nome-salvo").innerText = valorDigitado;
 }
