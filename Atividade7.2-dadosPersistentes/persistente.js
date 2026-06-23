@@ -18,3 +18,7 @@ function salvarNome(){
     document.getElementById("nome-salvo").innerText = valorDigitado;
     
 }
+
+function apagarTudo(){
+    localStorage.clear()
+}
