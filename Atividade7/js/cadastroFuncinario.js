@@ -1,4 +1,4 @@
-let i = 1
+let i = localStorage.length
 function cadastrarFuncionario() {
     let nome = document.getElementById("nome-funcionario").value;
     let horas = document.getElementById("horas-funcionario").value;
@@ -47,8 +47,8 @@ function cadastrarFuncionario() {
     document.getElementById("horas-funcionario").selectedIndex = 0;
 
     i++
-
 }
+
 function salvarCadastro(i, nome, horas, cargo){
     //let valorDigitado = document.getElementById("texto-inserido").value;
     let objetoFuncionario = {
