@@ -1,13 +1,16 @@
 let i = localStorage.length
 
 function totalRegistrosAtuais(){
+    //pode explodir por falta de verificação se o localstorage é vazia
     alert("Total de itens armazenados: " + localStorage.length + "\n" + 
-        "Nome do funcionario do primeiro registro: " + JSON.parse(localStorage.getItem(0)).nome
+        "Dados do funcionario do primeiro registro: " + 
+        "\nNome: "+ JSON.parse(localStorage.getItem(0)).nome + 
+        "\nHoras: " + JSON.parse(localStorage.getItem(0)).horas + 
+        "\nCargo: " + JSON.parse(localStorage.getItem(0)).cargo
     );
 }
 
-function cadastrarFuncionario() {
-    totalRegistrosAtuais()
+function cadastrarFuncionario() {    
 
     let nome = document.getElementById("nome-funcionario").value;
     let horas = document.getElementById("horas-funcionario").value;
@@ -53,6 +56,8 @@ function cadastrarFuncionario() {
     document.getElementById("horas-funcionario").selectedIndex = 0;
 
     i++
+    //Colocado aqui para garantir que haverá pelo menos um registro para ser executado
+    totalRegistrosAtuais()
 }
 
 function salvarCadastro(i, nome, horas, cargo){
