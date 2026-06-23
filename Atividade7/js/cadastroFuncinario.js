@@ -1,5 +1,14 @@
 let i = localStorage.length
+
+function totalRegistrosAtuais(){
+    alert("Total de itens armazenados: " + localStorage.length + "\n" + 
+        "Nome do funcionario do primeiro registro: " + JSON.parse(localStorage.getItem(0)).nome
+    );
+}
+
 function cadastrarFuncionario() {
+    totalRegistrosAtuais()
+
     let nome = document.getElementById("nome-funcionario").value;
     let horas = document.getElementById("horas-funcionario").value;
     let cargo = document.getElementById("cargo-funcionario").value;
@@ -26,10 +35,7 @@ function cadastrarFuncionario() {
     cardFuncionario.style.margin = "10px 0";
     cardFuncionario.style.borderRadius = "5px";
 
-    console.log(nome)
-    console.log(horas)
-    console.log(cargo)
-
+    //alert(console.log(localStorage.key(i-1).nome));
 
     cardFuncionario.innerHTML = 
         "<p><strong>Nome:</strong> " + nome + "</p>" +
@@ -58,7 +64,6 @@ function salvarCadastro(i, nome, horas, cargo){
     };
     let textoJSON = JSON.stringify(objetoFuncionario);
     
-
     localStorage.setItem(i, textoJSON);
     //document.getElementById("nome-salvo").innerText = valorDigitado;
 }
