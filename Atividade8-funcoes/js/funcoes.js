@@ -1,13 +1,58 @@
 let i = 1;
 let j = localStorage.length
 
-let numero1 = document.getElementById("primeiro-numero").value;
-let numero2 = document.getElementById("segundo-numero").value;
+function tabuada(operacao){
+    let numero1 = document.getElementById("primeiro-numero").value;
+    let numero2 = document.getElementById("segundo-numero").value;
+    let resultado;
 
-function soma(numero1, numero2) {
+    switch(operacao){
+        case "soma":
+            resultado = Number(numero1) + Number(numero2);
+            salvarHistorico(operacao, numero1, numero2, resultado);
+            break
+        case "subtracao":
+            resultado = Number(numero1) - Number(numero2);
+            break
+        case "multiplicacao":
+            resultado = Number(numero1) * Number(numero2);
+            break
+        case "divisao":
+            resultado = Number(numero1) / Number(numero2);
+            break
+        default:
+            alert("selecionou operação nada ver");            
+    }
+    document.getElementById("resultado").innerText = resultado;
+    salvarHistorico(operacao, numero1, numero2, resultado);
+    i++
+    j++
+}
+
+function soma(){
+    tabuada("soma");
+}
+
+function subtracao(){
+    tabuada("subtracao");
+}
+
+function multiplicacao(){
+    tabuada("multiplicacao");
+}
+
+function divisao(){
+    tabuada("divisao");
+}
+
+/* CODIGO ANTERIOR
+
+function soma() {
     let operacao = "soma";
+    let numero1 = document.getElementById("primeiro-numero").value;
+    let numero2 = document.getElementById("segundo-numero").value;
 
-    let resultado = Number(numero1) + Number(numero2);
+    let resultado = Number(dado.n1) + Number(dado.n2);
 
     document.getElementById("resultado").innerText = resultado;
 
@@ -15,7 +60,6 @@ function soma(numero1, numero2) {
 
     i++
     j++
-
 }
 
 function subtracao() {
@@ -65,12 +109,14 @@ function divisao() {
     j++
 
 }
+*/
 
 function apagar() {
     document.getElementById("primeiro-numero").value = "";
     document.getElementById("segundo-numero").value = "";
     document.getElementById("resultado").innerText = "";
 }
+
 
 function salvarHistorico(operacao, numero1, numero2, resultado) {
     /*
