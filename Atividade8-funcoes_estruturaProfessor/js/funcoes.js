@@ -22,7 +22,7 @@ function subtracao() {
 
 function multiplicacao() {
     let primeiroNumero = document.getElementById("primeiro-numero").value;
-    let segundoNumero = document.getElementById("segundo-numero").value;
+    let segundoNumero = document.getElementById("segundo-numero").value; 
 
     let resultado = Number(primeiroNumero) * Number(segundoNumero);
 
