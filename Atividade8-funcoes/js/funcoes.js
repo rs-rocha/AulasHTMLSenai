@@ -1,7 +1,47 @@
 let i = 1;
 let j = localStorage.length
 
-function tabuada(operacao){
+function apagar() {
+    document.getElementById("primeiro-numero").value = "";
+    document.getElementById("segundo-numero").value = "";
+    document.getElementById("resultado").innerText = "";
+}
+
+
+function salvarHistorico(operacao, numero1, numero2, resultado) {
+    /*
+        Hisórico de função utilizada
+        Ex -> Função: soma
+
+        Histórico de números digitados
+        Ex -> Primeiro numero: 10, SegundoNumero: 10
+
+        Histórico de resultados obtidos:
+        Ex -> 20
+
+        apresentado num console.log
+    */
+    let historico = {
+        funcao: operacao,
+        num1: numero1,
+        num2: numero2,
+        resultado: resultado
+    }
+    console.log(
+        "Execução " + i + " | " +
+        historico.funcao + " | " +
+        historico.num1 + " | " +
+        historico.num2 + " | " +
+        historico.resultado
+    )
+
+    let textoJSON = JSON.stringify(historico);
+    localStorage.setItem("Execucao" + j, textoJSON);
+
+}
+
+
+function calcular(operacao){
     let numero1 = document.getElementById("primeiro-numero").value;
     let numero2 = document.getElementById("segundo-numero").value;
     let resultado;
@@ -9,7 +49,6 @@ function tabuada(operacao){
     switch(operacao){
         case "soma":
             resultado = Number(numero1) + Number(numero2);
-            salvarHistorico(operacao, numero1, numero2, resultado);
             break
         case "subtracao":
             resultado = Number(numero1) - Number(numero2);
@@ -30,19 +69,19 @@ function tabuada(operacao){
 }
 
 function soma(){
-    tabuada("soma");
+    calcular("soma");
 }
 
 function subtracao(){
-    tabuada("subtracao");
+    calcular("subtracao");
 }
 
 function multiplicacao(){
-    tabuada("multiplicacao");
+    calcular("multiplicacao");
 }
 
 function divisao(){
-    tabuada("divisao");
+    calcular("divisao");
 }
 
 /* CODIGO ANTERIOR
@@ -111,43 +150,5 @@ function divisao() {
 }
 */
 
-function apagar() {
-    document.getElementById("primeiro-numero").value = "";
-    document.getElementById("segundo-numero").value = "";
-    document.getElementById("resultado").innerText = "";
-}
-
-
-function salvarHistorico(operacao, numero1, numero2, resultado) {
-    /*
-        Hisórico de função utilizada
-        Ex -> Função: soma
-
-        Histórico de números digitados
-        Ex -> Primeiro numero: 10, SegundoNumero: 10
-
-        Histórico de resultados obtidos:
-        Ex -> 20
-
-        apresentado num console.log
-    */
-    let historico = {
-        funcao: operacao,
-        num1: numero1,
-        num2: numero2,
-        resultado: resultado
-    }
-    console.log(
-        "Execução " + i + " | " +
-        historico.funcao + " | " +
-        historico.num1 + " | " +
-        historico.num2 + " | " +
-        historico.resultado
-    )
-
-    let textoJSON = JSON.stringify(historico);
-    localStorage.setItem("Execucao" + j, textoJSON);
-
-}
 
 
