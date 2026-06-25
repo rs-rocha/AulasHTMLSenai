@@ -1,7 +1,6 @@
 /*comandos vscode
 crtl+shif+p - mostra comandos do vscode
 crtl+p - mostra pesquisa
-
 */
 
 function soma() {
