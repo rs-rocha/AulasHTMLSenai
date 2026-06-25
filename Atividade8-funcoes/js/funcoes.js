@@ -7,9 +7,8 @@ function apagar() {
     document.getElementById("resultado").innerText = "";
 }
 
-
 function salvarHistorico(operacao, numero1, numero2, resultado) {
-    /*
+    /*Comando da atividade - Exercicio
         Hisórico de função utilizada
         Ex -> Função: soma
 
@@ -37,9 +36,14 @@ function salvarHistorico(operacao, numero1, numero2, resultado) {
 
     let textoJSON = JSON.stringify(historico);
     localStorage.setItem("Execucao" + j, textoJSON);
-
 }
 
+function apagarHistorico(){
+    let confirmarApagar = window.confirm("Deseja apagar seu histórico? ")
+    if(confirmaApagar){
+        localStorage.clear();
+    }
+}
 
 function calcular(operacao){
     let numero1 = document.getElementById("primeiro-numero").value;
