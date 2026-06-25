@@ -1,3 +1,9 @@
+/*comandos vscode
+crtl+shif+p - mostra comandos do vscode
+crtl+p - mostra pesquisa
+
+*/
+
 function soma() {
     let primeiroNumero = document.getElementById("primeiro-numero").value;
     let segundoNumero = document.getElementById("segundo-numero").value;
