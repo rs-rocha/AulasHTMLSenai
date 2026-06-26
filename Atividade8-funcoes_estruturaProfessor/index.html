@@ -9,20 +9,35 @@
     <main>
         <h1>Teste de funções matemáticas</h1>
         <h2>Operações</h2>
-        <label for="primeiro-numero">Digite o primeiro numero:</label>
-        <input type="number" id="primeiro-numero">
-        <br>
-        <label for="segundo-numero">Digite o segundo numero:</label>
-        <input type="number" id="segundo-numero">
-        <br>
-        <button onclick="soma()">SOMA</button>
-        <button onclick="subtracao()">SUBTRAÇÃO</button>
-        <button onclick="multiplicacao()">MULTIPLICAÇÃO</button>
-        <button onclick="divisao()">DIVISÃO</button>
-        <br>
-        <p>Seu resultado é: <strong id="resultado"></strong></p>
-        <br>
-        <br>
+        <section>
+            <label for="primeiro-numero">Digite o primeiro numero:</label>
+            <input type="number" id="primeiro-numero">
+            <br>
+            <label for="segundo-numero">Digite o segundo numero:</label>
+            <input type="number" id="segundo-numero">
+            <br>
+            <button onclick="soma()">SOMA</button>
+            <button onclick="subtracao()">SUBTRAÇÃO</button>
+            <button onclick="multiplicacao()">MULTIPLICAÇÃO</button>
+            <button onclick="divisao()">DIVISÃO</button>
+            <br>
+            <p>Seu resultado é: <strong id="resultado"></strong></p>
+        </section>
+        <br><br><br>
+        <section>
+            <h2>Imposto de Importacao</h2>
+            <label for="valor-produto">Digite o valor do produto:</label>
+            <input type="text" id="valor-produto">
+            <br><br>
+            <button onclick="calcularImposto()">Valor Total</button>
+            <br>
+            <p>Total a pagar: <strong id="valor-total"></strong></p>
+            <br>
+            <br>
+        </section>
+
+        
+
         <button onclick="apagarLocalStorage()">Apagar histórico</button>
         <script src="js/funcoes.js"></script>
     </main>
