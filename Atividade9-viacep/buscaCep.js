@@ -1,9 +1,10 @@
+//função criada para retirar o hifen
 function retiraHifen(cepDigitado){
     
-    if(cepDigitado.includes("-") ){
-        cepDigitado = cepDigitado.replace("-", "");
+    if(cepDigitado.includes("-") ){ //verifica se o cep digitado possui hifen
+        cepDigitado = cepDigitado.replace("-", ""); //retira o hifen na string
     }    
-    return cepDigitado
+    return cepDigitado //retorna o novo valor do cep digitado, caso não tenha hifen retorna o valor recebido
 }
 
 function buscarCep(){
@@ -12,12 +13,15 @@ function buscarCep(){
     if (cepDigitado === ""){
         return;
     }
+    
+    cepDigitado = retiraHifen(cepDigitado); //chama a função retiraHifen e renomeia a variavel cepDigitado 
 
-    cepDigitado = retiraHifen(cepDigitado);
+    /* 
+    declara a variavel numeroCaracter e e atribui o valor boleano se o cepDigitado tem 8 caracteres
+    */
+    let numeroCaracterer = cepDigitado.length == 8 
 
-    let numeroCaracterer = cepDigitado.length == 8
-
-    if (numeroCaracterer) {
+    if (numeroCaracterer) { //se numero de caracter for verdadeiro, ou seja, possui 8 caracteres, executa a busca
         fetch(`https://viacep.com.br/ws/${cepDigitado}/json/`)
         .then(function(resposta){
             return resposta.json();            
@@ -33,7 +37,7 @@ function buscarCep(){
             document.getElementById("uf").value = dados.uf;
         })
         
-    } else {
+    } else { // caso o número de caracteres for diferente de 8, não executa a busca e envia mensagem de alerta
         alert("Cep possui quantidade diferente de 8 algarismos")
         return;
     }
