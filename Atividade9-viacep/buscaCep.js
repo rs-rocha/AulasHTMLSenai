@@ -1,3 +1,11 @@
+function retiraHifen(cepDigitado){
+    
+    if(cepDigitado.includes("-") ){
+        cepDigitado = cepDigitado.replace("-", "");
+    }    
+    return cepDigitado
+}
+
 function buscarCep(){
     let cepDigitado = document.getElementById("cep").value;
     
@@ -5,7 +13,12 @@ function buscarCep(){
         return;
     }
 
-    fetch(`https://viacep.com.br/ws/${cepDigitado}/json/`)
+    cepDigitado = retiraHifen(cepDigitado);
+
+    let numeroCaracterer = cepDigitado.length == 8
+
+    if (numeroCaracterer) {
+        fetch(`https://viacep.com.br/ws/${cepDigitado}/json/`)
         .then(function(resposta){
             return resposta.json();            
         })
@@ -19,7 +32,12 @@ function buscarCep(){
             document.getElementById("cidade").value = dados.localidade;
             document.getElementById("uf").value = dados.uf;
         })
-    
+        
+    } else {
+        alert("Cep possui quantidade diferente de 8 algarismos")
+        return;
+    }
+        
 }
 
 const campoCep = document.getElementById("cep");
